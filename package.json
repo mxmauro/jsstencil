@@ -2,7 +2,7 @@
   "name": "jstemplate",
   "version": "1.0.0",
   "description": "ExpressJS Javascript Template for Dynamic Webpage generation",
-  "main": "./lib/index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "node ./test/server.js"
   },
@@ -12,8 +12,11 @@
     "template"
   ],
   "author": "Mauro H. Leggieri",
+  "email": "mxmauro [at] mauroleggieri.com",
+  "url": "http://www.mauroleggieri.com",
   "license": "MIT",
   "devDependencies": {
+    "async": "^2.5.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "express-session": "^1.15.5",

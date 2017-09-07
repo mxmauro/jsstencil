@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% require('./header.jst'); %>
+	<title>JsTemplate - Index</title>
+</head>
+<body>
+	<% require('./toptoolbar.jst'); %>
+	<div class="container">
+		<p>HtmlEntities test: <%= htmlentities("<>") %></p>
+		<%
+		if (!req.session.value)
+			req.session.value = 1;
+		else
+			req.session.value++;
+		%>
+		<p>Session value: <% echo(req.session.value.toString()); %></p>
+	</div>
+	<% require('./footer.jst'); %>
+</body>
+</html>
+<%
+done();
+%>

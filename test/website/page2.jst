@@ -1,0 +1,50 @@
+<%
+var async = require('async');
+
+async.waterfall([
+		function (callback) {
+			//dummy function to show we can use any module with JsTemplates
+			//we render a header here
+			%>
+<!DOCTYPE html>
+<html>
+<head>
+	<% require('./header.jst'); %>
+	<title>JsTemplate - Page 2</title>
+</head>
+			<%
+			callback(null);
+		},
+		function (callback) {
+			//another dummy function to show we can use any module with JsTemplates
+			//we render the a body here
+			%>
+<body>
+	<% require('./toptoolbar.jst'); %>
+	<div class="container">
+		<%
+		for (var i = 0; i < 10; i++)
+		{
+		%>
+			<p>Value of I = <%= htmlentities(i.toString()) %> - RandomInt(100,200) = <%= htmlentities(randomInt(100, 200).toString()) %></p>
+		<%
+		}
+		%>
+	</div>
+	<% require('./footer.jst'); %>
+</body>
+			<%
+			callback(null);
+		},
+		function (callback) {
+			//now we render close html tag
+			%>
+</html>
+			<%
+			callback(null);
+		}
+	],
+	function (err, result) {
+		done(err);
+	});
+%>
