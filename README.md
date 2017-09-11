@@ -14,7 +14,7 @@ $ npm install jsstencil
   * Html output with `<%= %>` or `echo`.
   * Html-safe output with `<%= htmlentities(...) %>`.
   * Complete access to request (`req`) and response (`res`) objects.
-  * Supports `require` to include NodeJS modules or nested templated.
+  * Supports `require` to include NodeJS modules or nested templates.
   * Supports user-defined functions and values.
 
 
