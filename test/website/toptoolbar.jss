@@ -7,12 +7,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><b>JSTEMPLATE</b></a>
+            <a class="navbar-brand" href="#"><b>JSSTENCIL</b></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li<% if (__filename.length >= 10 && __filename.substr(-10) == "/index.jst") echo(' class="active"'); %>><a href="index.jst">Home</a></li>
-                <li<% if (__filename.length >= 11 && __filename.substr(-11) == "/page2.jst") echo(' class="active"'); %>><a href="page2.jst">Page 2</a></li>
+                <li<% if (__filename.length >= 10 && __filename.substr(-10) == "/index.jss") echo(' class="active"'); %>><a href="index.jss">Home</a></li>
+                <li<% if (__filename.length >= 11 && __filename.substr(-11) == "/page2.jss") echo(' class="active"'); %>><a href="page2.jss">Page 2</a></li>
             </ul>
         </div>
     </div>

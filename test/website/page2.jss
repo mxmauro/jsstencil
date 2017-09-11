@@ -3,24 +3,24 @@ var async = require('async');
 
 async.waterfall([
 		function (callback) {
-			//dummy function to show we can use any module with JsTemplates
+			//dummy function to show we can use any module with JsStencil
 			//we render a header here
 			%>
 <!DOCTYPE html>
 <html>
 <head>
-	<% require('./header.jst'); %>
-	<title>JsTemplate - Page 2</title>
+	<% require('./header.jss'); %>
+	<title>JsStencil - Page 2</title>
 </head>
 			<%
 			callback(null);
 		},
 		function (callback) {
-			//another dummy function to show we can use any module with JsTemplates
+			//another dummy function to show we can use any module with JsStencil
 			//we render the a body here
 			%>
 <body>
-	<% require('./toptoolbar.jst'); %>
+	<% require('./toptoolbar.jss'); %>
 	<div class="container">
 		<%
 		for (var i = 0; i < 10; i++)
@@ -31,7 +31,7 @@ async.waterfall([
 		}
 		%>
 	</div>
-	<% require('./footer.jst'); %>
+	<% require('./footer.jss'); %>
 </body>
 			<%
 			callback(null);

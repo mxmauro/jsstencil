@@ -1,11 +1,11 @@
-# JsTemplate
+# JsStencil
 ExpressJS Javascript Template for Dynamic Webpage generation
 
 
 ## Installation
 
 ```bash
-$ npm install jstemplate
+$ npm install jsstencil
 ```
 
 ## Features
@@ -34,7 +34,7 @@ A more complex sample that uses [`express-session`](https://www.npmjs.com/packag
 <!DOCTYPE html>
 <html>
 <head>
-	<% require('./header.jst'); %>
+	<% require('./header.jss'); %>
 	<title>Sample</title>
 </head>
 <body>
@@ -76,12 +76,12 @@ done();
 ## Usage
 
 ```javascript
-var jstRenderer = require('jstemplate').createRenderer(options);
+var jstRenderer = require('jsstencil').createRenderer(options);
 //...
 app.get('*', function(req, res, next) {
 		jstRenderer(req, res, next); 
 	},
-	//renderer will pass the request to 'next' if not a .jst file
+	//renderer will pass the request to 'next' if not a .jss file
 	function(req, res, next) {
 		//...
 	}
@@ -93,11 +93,11 @@ app.get('*', function(req, res, next) {
 
 ## The special function `done()`
 
-All scripts (`.jst`) must call `done();` or `done(err);` when they finish to execute the code.
+All scripts (`.jss`) must call `done();` or `done(err);` when they finish to execute the code.
 
 Given the __asynchronous nature__ of NodeJS, part of the user script may need to wait an asyncronous response, for e.g.: from a database, to render some data so the script must advise the engine when it finishes to do its tasks.
 
-The `done` function tells JsTemplate that rendering is complete so it can continue executing.
+The `done` function tells JsStencil that rendering is complete so it can continue executing.
 
 If your code has no asynchronous tasks, simply add the call to `done();` at the end. Else call it when your asynchronous callback is called.
 
@@ -107,11 +107,11 @@ If you specify the optional error paremeter, a http status 500 Internal Server E
 ## Options
 
 - `root` (string)
-    Project root for includes with an absolute path (/index.jst).
+    Project root for includes with an absolute path (/index.jss).
 - `showErrorDetails` (boolean)
     Send details with the 500 Internal Server Error status on JS errors.
 - `fileExt` (string)
-    File extension to use (default: `.jst`)
+    File extension to use (default: `.jss`)
 - `userData` (object)
     A set of values and/or functions to pass to the template. Object keys will appear as global objects in the template.
 
@@ -137,7 +137,7 @@ If you specify the optional error paremeter, a http status 500 Internal Server E
 
 ## Require/includes
 
-When you use `require` using a relative path and the file extension matches `options.fileExt` (which defaults to `.jst`), `require` will act as an include command and the content of the file will be inserted at the current script position.
+When you use `require` using a relative path and the file extension matches `options.fileExt` (which defaults to `.jss`), `require` will act as an include command and the content of the file will be inserted at the current script position.
 
 Otherwise `require` will have its default `NodeJS` behavior.
 
@@ -145,7 +145,7 @@ Otherwise `require` will have its default `NodeJS` behavior.
 ## Limitations
 
 - Currently, there is no caching scheme.
-- Although JSTemplate can be used as a view engine, it is not fully tested and have limitations, like `req` and `res` to be unavailable.
+- Although JsStencil can be used as a view engine, it is not fully tested and have limitations, like `req` and `res` to be unavailable.
 - No client-side support.
 
 
@@ -155,6 +155,6 @@ Licensed under the MIT License
 (<https://opensource.org/licenses/MIT>)
 
 - - -
-JsTemplate - Javascript Template for Dynamic Webpage generation
+JsStencil - Javascript Template for Dynamic Webpage generation
 Copyright (C) 2017
 mxmauro [at] mauroleggieri [dot] com

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<% require('./header.jst'); %>
-	<title>JsTemplate - Index</title>
+	<% require('./header.jss'); %>
+	<title>JsStencil - Index</title>
 </head>
 <body>
-	<% require('./toptoolbar.jst'); %>
+	<% require('./toptoolbar.jss'); %>
 	<div class="container">
 		<p>HtmlEntities test: <%= htmlentities("<>") %></p>
 		<%
@@ -16,7 +16,7 @@
 		%>
 		<p>Session value: <% echo(req.session.value.toString()); %></p>
 	</div>
-	<% require('./footer.jst'); %>
+	<% require('./footer.jss'); %>
 </body>
 </html>
 <%

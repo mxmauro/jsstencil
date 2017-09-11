@@ -1,7 +1,7 @@
 {
-  "name": "jstemplate",
+  "name": "jsstencil",
   "version": "1.0.0",
-  "description": "ExpressJS Javascript Template for Dynamic Webpage generation",
+  "description": "JsStencil - ExpressJS Javascript Template for Dynamic Webpage generation",
   "main": "./index.js",
   "scripts": {
     "test": "node ./test/server.js"

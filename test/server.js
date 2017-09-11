@@ -1,5 +1,5 @@
 /*!
- * JsTemplate - https://github.com/mxmauro/jstemplate
+ * JsStencil - https://github.com/mxmauro/jsstencil
  *
  * Copyright(c) 2017 Mauro H. Leggieri <mxmauro [at] mauroleggieri [dot] com>
  * MIT Licensed
@@ -22,7 +22,7 @@ global.config = JSON.parse(fs.readFileSync(__dirname + path.sep + 'config.json',
 EnsureFolderExists(__dirname + path.sep + 'sessions');
 
 var app = express();
-var jstemplate = require('../lib/jstemplate').createRenderer({
+var jsRenderer = require('../lib/jsstencil').createRenderer({
 	root: __dirname + path.sep + 'website',
 	showErrorDetails: true,
 	userData: {
@@ -40,7 +40,7 @@ app.use(helmet());
 app.disable('x-powered-by');
 app.set('trust proxy', 1);
 app.use(session({
-	secret: 'jstemplate session magic',
+	secret: 'jsstencil session magic',
 	name: 'jstsessionid',	
 	resave: false,
 	saveUninitialized: true,
@@ -55,7 +55,7 @@ app.use(session({
 }));
 
 app.get('*', function(req, res, next) {
-		jstemplate(req, res, next); //pass the request to 'next' if not a .jst file
+		jsRenderer(req, res, next); //pass the request to 'next' if not a .jss file
 	},
 	function(req, res, next) {
 		staticFiles(req, res, next);
@@ -64,7 +64,7 @@ app.get('*', function(req, res, next) {
 
 // Start server
 app.listen(config.server.port, function() {
-    console.log("JsTemplate Demo running on http://localhost:" + config.server.port.toString());
+    console.log("JsStencil Demo running on http://localhost:" + config.server.port.toString());
 });
 
 //------------------------------------------------------------------------------
