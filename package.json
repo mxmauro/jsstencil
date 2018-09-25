@@ -1,6 +1,6 @@
 {
   "name": "jsstencil",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JsStencil - ExpressJS Javascript Template for Dynamic Webpage generation",
   "main": "./index.js",
   "scripts": {
@@ -17,11 +17,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mxmauro/jsstencil.git"
-  }, 
+  },
   "bugs": {
     "url": "https://github.com/mxmauro/jsstencil/issues"
   },
-  "homepage": "https://github.com/mxmauro/jsstencil#readme", 
+  "homepage": "https://github.com/mxmauro/jsstencil#readme",
   "license": "MIT",
   "devDependencies": {
     "async": "^2.5.0",
