@@ -1,3 +1,9 @@
+<%
+if (req.url.indexOf('/header.jss') >= 0) {
+	res.sendStatus(403);
+	exit();
+}
+%>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
