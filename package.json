@@ -1,6 +1,6 @@
 {
   "name": "jsstencil",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "JsStencil - ExpressJS Javascript Template for Dynamic Webpage generation",
   "main": "./index.js",
   "scripts": {
